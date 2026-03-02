@@ -1,0 +1,101 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#020617,#0f172a);
+color:white;
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+padding:20px 40px;
+background:#020617;
+border-bottom:1px solid #334155;
+}
+
+.social a{
+color:#38bdf8;
+margin-left:15px;
+text-decoration:none;
+}
+
+/* NAVBAR */
+nav{
+text-align:center;
+padding:15px;
+background:#1e293b;
+}
+
+nav a{
+margin:20px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#38bdf8;
+}
+
+/* LAYOUT */
+.container{
+display:flex;
+padding:25px;
+}
+
+/* SIDEBAR */
+aside{
+width:20%;
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:10px;
+}
+
+aside li{
+padding:10px 0;
+}
+
+/* MAIN */
+main{
+width:80%;
+display:flex;
+gap:25px;
+justify-content:center;
+}
+
+/* CARDS */
+.card{
+background:rgba(255,255,255,0.07);
+padding:15px;
+border-radius:12px;
+width:30%;
+text-align:center;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-12px);
+box-shadow:0 15px 25px black;
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:#020617;
+margin-top:20px;
+}

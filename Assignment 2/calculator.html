@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator Using Switch</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Calculator Box */
+.calculator {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+    width: 320px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056cc;
+}
+
+/* Result */
+#result {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+</style>
+</head>
+
+<body>
+
+<div class="calculator">
+    <h2>Calculator</h2>
+
+    <input type="number" id="num1" placeholder="Enter First Number">
+
+    <input type="number" id="num2" placeholder="Enter Second Number">
+
+    <select id="operation">
+        <option value="add">Addition (+)</option>
+        <option value="sub">Subtraction (-)</option>
+        <option value="mul">Multiplication (*)</option>
+        <option value="div">Division (/)</option>
+    </select>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function calculate() {
+
+    let n1 = Number(document.getElementById("num1").value);
+    let n2 = Number(document.getElementById("num2").value);
+    let op = document.getElementById("operation").value;
+
+    let result;
+
+    switch(op) {
+        case "add":
+            result = n1 + n2;
+            break;
+
+        case "sub":
+            result = n1 - n2;
+            break;
+
+        case "mul":
+            result = n1 * n2;
+            break;
+
+        case "div":
+            result = n2 === 0 ? "Cannot divide by zero" : n1 / n2;
+            break;
+
+        default:
+            result = "Invalid Operation";
+    }
+
+    document.getElementById("result").innerHTML =
+        "Result: " + result;
+}
+</script>
+
+</body>
+</html>

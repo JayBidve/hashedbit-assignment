@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Div</title>
+</head>
+
+<body>
+
+<h2>Dynamic Div Creator</h2>
+
+<div id="container"></div>
+
+<br>
+
+<button onclick="createDiv(200,100,'Hello HashedBit')">
+    Create Div
+</button>
+
+<script>
+
+function createDiv(width, height, text) {
+
+    // create new div
+    const newDiv = document.createElement("div");
+
+    // add width & height with px
+    newDiv.style.width = width + "px";
+    newDiv.style.height = height + "px";
+
+    // styling (optional but good)
+    newDiv.style.border = "2px solid black";
+    newDiv.style.margin = "10px";
+    newDiv.style.display = "flex";
+    newDiv.style.alignItems = "center";
+    newDiv.style.justifyContent = "center";
+
+    // add text
+    newDiv.textContent = text;
+
+    // add inside container
+    document.getElementById("container").appendChild(newDiv);
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Splice Example</title>
+
+<style>
+body{
+    font-family: Arial;
+    background: linear-gradient(to right,#43cea2,#185a9d);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+    width:400px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+button{
+    padding:10px 20px;
+    background:#185a9d;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0f3f70;
+}
+
+#result{
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Array Splice Example</h2>
+
+<p><b>Input:</b> INDIA</p>
+
+<button onclick="changeString()">Convert</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+function changeString(){
+
+let string = "INDIA";
+
+// Convert string to array
+let arr = string.split("");
+
+// Insert ONES after D (index 3)
+arr.splice(3, 0, "O","N","E","S");
+
+// Convert back to string
+let output = arr.join("");
+
+document.getElementById("result").innerHTML =
+"Output: " + output;
+}
+
+</script>
+
+</body>
+</html>

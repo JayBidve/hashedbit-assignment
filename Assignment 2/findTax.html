@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Find Tax</title>
+
+<style>
+body{
+    font-family: Arial;
+    background: linear-gradient(to right,#36d1dc,#5b86e5);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.box{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    width:350px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:15px 0;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+button{
+    padding:12px;
+    width:100%;
+    background:#5b86e5;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#3f6fd1;
+}
+
+#result{
+    margin-top:20px;
+    font-weight:bold;
+    font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>Tax Calculator</h2>
+
+<input type="number" id="salary" placeholder="Enter Salary">
+
+<button onclick="findTax()">Calculate Tax</button>
+
+<div id="result"></div>
+</div>
+
+<script>
+
+function findTax(){
+
+    let salary = Number(document.getElementById("salary").value);
+    let tax = 0;
+    let slab;
+
+    // Decide slab
+    if(salary > 0 && salary <= 500000)
+        slab = "A";
+    else if(salary <= 1000000)
+        slab = "B";
+    else if(salary <= 1500000)
+        slab = "C";
+    else
+        slab = "D";
+
+    // Switch Control Flow
+    switch(slab){
+
+        case "A":
+            tax = 0;
+            break;
+
+        case "B":
+            tax = salary * 0.10;
+            break;
+
+        case "C":
+            tax = salary * 0.20;
+            break;
+
+        case "D":
+            tax = salary * 0.30;
+            break;
+
+        default:
+            tax = "Invalid Salary";
+    }
+
+    document.getElementById("result").innerHTML =
+        "Tax Amount = ₹ " + tax;
+}
+
+</script>
+
+</body>
+</html>

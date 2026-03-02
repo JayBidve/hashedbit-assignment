@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vowel & Consonant Counter</title>
+
+<style>
+body{
+    font-family: Arial;
+    background: linear-gradient(to right,#ff9966,#ff5e62);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.box{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    width:420px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+button{
+    padding:10px 20px;
+    background:#ff5e62;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+#result{
+    margin-top:20px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>Vowel & Consonant Counter</h2>
+
+<p id="text">
+India is a beautiful country with rich culture
+</p>
+
+<button onclick="countVC()">Count</button>
+
+<div id="result"></div>
+</div>
+
+<script>
+
+function countVC(){
+
+let str =
+"India is a beautiful country with rich culture";
+
+let vowels = 0;
+let consonants = 0;
+
+str = str.toLowerCase();
+
+for(let ch of str){
+
+if("aeiou".includes(ch))
+    vowels++;
+else if(ch >= 'a' && ch <= 'z')
+    consonants++;
+}
+
+document.getElementById("result").innerHTML =
+"Vowels: "+vowels+
+"<br>Consonants: "+consonants;
+}
+
+</script>
+
+</body>
+</html>

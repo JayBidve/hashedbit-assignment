@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mini Text Editor</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background:#f4f6f8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.editor{
+    background:white;
+    padding:25px;
+    width:600px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+#text-container{
+    border:2px solid #ddd;
+    padding:20px;
+    font-size:55px;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.controls{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+button{
+    padding:8px 14px;
+    cursor:pointer;
+    border:none;
+    background:#007bff;
+    color:white;
+    border-radius:5px;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+input, select{
+    padding:6px;
+}
+
+#css-props{
+    background:#eee;
+    padding:10px;
+    margin-top:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="editor">
+
+<div class="text-here" id="text-container">
+This is some example text
+</div>
+
+<div class="controls">
+
+<input type="text" id="colorbox" placeholder="Enter color">
+<button id="colorchange">Color</button>
+
+<input type="range" id="fontsize" min="10" max="100" value="55">
+
+<button id="italic">Italic</button>
+<button id="underline">Underline</button>
+<button id="bold">Bold</button>
+
+<select id="list">
+<option value="serif">Serif</option>
+<option value="sans-serif">Sans-Serif</option>
+<option value="monospace">Monospace</option>
+<option value="cursive">Cursive</option>
+<option value="fantasy">Fantasy</option>
+</select>
+
+<button id="getstyle">Get CSS</button>
+
+</div>
+
+<p id="css-props"></p>
+
+</div>
+
+<script>
+
+const text = document.getElementById("text-container");
+
+document.getElementById("colorchange").onclick=()=>{
+text.style.color=document.getElementById("colorbox").value;
+};
+
+document.getElementById("fontsize").oninput=(e)=>{
+text.style.fontSize=e.target.value+"px";
+};
+
+document.getElementById("italic").onclick=()=>{
+text.style.fontStyle=
+text.style.fontStyle==="italic"?"normal":"italic";
+};
+
+document.getElementById("underline").onclick=()=>{
+text.style.textDecoration=
+text.style.textDecoration==="underline"?"none":"underline";
+};
+
+document.getElementById("bold").onclick=()=>{
+text.style.fontWeight=
+text.style.fontWeight==="bold"?"normal":"bold";
+};
+
+document.getElementById("list").onchange=(e)=>{
+text.style.fontFamily=e.target.value;
+};
+
+document.getElementById("getstyle").onclick=()=>{
+
+document.getElementById("css-props").textContent=`
+color: ${text.style.color};
+font-size: ${text.style.fontSize};
+font-family: ${text.style.fontFamily};
+font-style: ${text.style.fontStyle};
+text-decoration: ${text.style.textDecoration};
+font-weight: ${text.style.fontWeight};
+`;
+};
+
+</script>
+
+</body>
+</html>

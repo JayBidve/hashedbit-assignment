@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Repeated Sum of Digits</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #232526, #414345);
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .card {
+            background-color: #111;
+            padding: 35px;
+            border-radius: 18px;
+            width: 380px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+        }
+
+        h2 {
+            color: gold;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 2px solid gold;
+            background-color: #000;
+            color: gold;
+            outline: none;
+        }
+
+        input::placeholder {
+            color: #d4af37;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            background-color: gold;
+            color: black;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #d4af37;
+            transform: scale(1.05);
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #00ffcc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Repeated Sum of Digits</h2>
+
+        <input type="number" id="num" placeholder="Enter a number">
+
+        <button onclick="calculate()">Calculate</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function repeatedSum(num) {
+            while (num >= 10) {
+                let sum = 0;
+
+                while (num > 0) {
+                    sum += num % 10;
+                    num = Math.floor(num / 10);
+                }
+
+                num = sum;
+            }
+            return num;
+        }
+
+        function calculate() {
+            let value = Number(document.getElementById("num").value);
+
+            if (isNaN(value) || value < 0) {
+                document.getElementById("result").innerText =
+                    "Please enter a valid positive number!";
+                return;
+            }
+
+            let result = repeatedSum(value);
+            document.getElementById("result").innerText =
+                "Final Single Digit: " + result;
+        }
+    </script>
+
+</body>
+</html>

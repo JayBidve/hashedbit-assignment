@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Even Numbers</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Box */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Button */
+button {
+    padding: 12px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ab70ea;
+}
+
+/* Result Box */
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    height: 150px;
+    overflow-y: auto;
+    background: #f4eef1;
+    border-radius: 8px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Even Numbers from 1 to 100</h2>
+
+    <button onclick="showEven()">Show Even Numbers</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function showEven() {
+
+    let output = "";
+
+    for(let i = 1; i <= 100; i++) {
+        if(i % 2 === 0) {
+            output += i + " ";
+        }
+    }
+
+    document.getElementById("result").innerHTML = output;
+}
+</script>
+
+</body>
+</html>

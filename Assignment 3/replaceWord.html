@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Word Replacement</title>
+
+<style>
+body{
+    font-family: Arial;
+    background: linear-gradient(to right,#36d1dc,#5b86e5);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.box{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    width:420px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+button{
+    padding:10px 20px;
+    background:#5b86e5;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+#result{
+    margin-top:20px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>Correct Word Function</h2>
+
+<p id="sentence">
+I love my Indai
+</p>
+
+<button onclick="runReplace()">Correct Sentence</button>
+
+<div id="result"></div>
+</div>
+
+<script>
+
+function correctfn(string, wrong, correct){
+    return string.replace(wrong, correct);
+}
+
+function runReplace(){
+
+let sentence = "I love my Indai";
+
+let output =
+correctfn(sentence,"Indai","India");
+
+document.getElementById("result").innerHTML =
+output;
+}
+
+</script>
+
+</body>
+</html>

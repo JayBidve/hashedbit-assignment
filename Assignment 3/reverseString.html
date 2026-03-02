@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reverse Words</title>
+
+<style>
+body{
+    font-family: Arial;
+    background: linear-gradient(to right,#ff9a9e,#fad0c4);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+    width:400px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+button{
+    padding:10px 20px;
+    background:#ff6f61;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#e65b50;
+}
+
+#result{
+    margin-top:20px;
+    font-weight:bold;
+    font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Reverse Sentence</h2>
+
+<p><b>Input:</b> I love my India</p>
+
+<button onclick="reverseText()">Reverse Words</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+function reverseText(){
+
+let str = "I love my India";
+
+// Split → Reverse → Join
+let output = str.split(" ").reverse().join(" ");
+
+document.getElementById("result").innerHTML =
+"Output: " + output;
+
+}
+
+</script>
+
+</body>
+</html>
