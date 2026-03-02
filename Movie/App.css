@@ -1,0 +1,82 @@
+.details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  gap: 40px;
+}
+
+.details-container img {
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.details-content {
+  max-width: 500px;
+}
+
+.details-content h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.details-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  gap: 40px;
+}
+
+.details-container img {
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.details-content {
+  max-width: 500px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  gap: 15px;
+}
+
+.booking-form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+}
+
+.ticket-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.ticket {
+  background: white;
+  color: black;
+  padding: 40px;
+  border-radius: 20px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
